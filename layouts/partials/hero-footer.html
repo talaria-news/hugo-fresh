@@ -1,13 +1,26 @@
 {{- $hero        := .Site.Params.hero }}
 {{- $clientLogos := index $hero "clientlogos" }}
+{{- $magazineLogos := index $hero "magazineLogos" }}
+
 <div class="hero-foot mb-20">
   <div class="container">
-    <div class="tabs is-centered">
+    <div class="tabs is-centered slider">
       <ul>
         {{- range $clientLogos }}
         <li>
           <a>
-            <img class="partner-logo" src="{{ printf "/images/logos/clients/%s.svg" . | relURL }}">
+            <img class="partner-logo" src="{{ printf "/images/logos/publishers/%s.svg" . | relURL }}">
+          </a>
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+    <div class="tabs is-centered slider magazine">
+      <ul>
+        {{- range $magazineLogos }}
+        <li>
+          <a>
+            <img class="partner-logo" src="{{ printf "/images/logos/magazines/%s.svg" . | relURL }}">
           </a>
         </li>
         {{- end }}
